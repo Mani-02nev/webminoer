@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-page: #0A0A0A;
+    --bg-surface: #121212;
+    --brand-primary: #EC4899;
+    --brand-hover: #DB2777;
+    --text-primary: #FAFAFA;
+    --text-secondary: #A1A1AA;
+
+    --shadow-glow: 0 0 20px rgba(236, 72, 153, 0.3);
+    --shadow-glow-hover: 0 0 30px rgba(236, 72, 153, 0.5);
+  }
+
+  body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: rgba(236, 72, 153, 0.3);
+    color: white;
+  }
+}
+
+@layer components {
+
+  /* Layout */
+  .layout-container {
+    @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12;
+  }
+
+  /* Typography */
+  .heading-xl {
+    @apply font-heading font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-white;
+  }
+
+  .heading-lg {
+    @apply font-heading font-bold text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight text-white;
+  }
+
+  .heading-md {
+    @apply font-heading font-bold text-2xl md:text-3xl leading-snug text-white;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-pink-100 to-brand-300;
+  }
+
+  /* Components */
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center px-8 py-4 text-white font-bold rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden;
+    background-color: var(--brand-primary);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--brand-hover);
+    box-shadow: var(--shadow-glow-hover);
+    transform: translateY(-4px);
+  }
+
+  .btn-primary:active {
+    transform: scale(0.95);
+  }
+
+  .btn-outline {
+    @apply relative inline-flex items-center justify-center px-8 py-4 bg-transparent border border-white/10 text-white font-medium rounded-xl transition-all duration-300;
+  }
+
+  .btn-outline:hover {
+    border-color: rgba(236, 72, 153, 0.5);
+    background-color: rgba(236, 72, 153, 0.05);
+    transform: translateY(-4px);
+  }
+
+  .btn-outline:active {
+    transform: scale(0.95);
+  }
+
+  /* Glass Card */
+  .card-glass {
+    @apply rounded-2xl transition-all duration-300;
+    background-color: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .card-glass:hover {
+    border-color: rgba(236, 72, 153, 0.2);
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  /* Input Field */
+  .input-field {
+    @apply w-full rounded-xl px-5 py-4 text-white placeholder-gray-500 transition-all duration-300;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .input-field:focus {
+    outline: none;
+    border-color: var(--brand-primary);
+    background-color: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 0 1px rgba(236, 72, 153, 0.5);
+  }
+}
