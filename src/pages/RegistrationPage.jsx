@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { Check, Loader2, AlertCircle, ChevronRight } from 'lucide-react';
+import { triggerRegistrationEmail, triggerWhatsAppMessage } from '../utils/emailTrigger';
 
 const RegistrationPage = () => {
     const navigate = useNavigate();
@@ -68,14 +69,19 @@ const RegistrationPage = () => {
                 name: formData.name,
                 email: formData.email.toLowerCase(),
                 whatsapp: formData.whatsapp,
-                experience: formData.status === 'Student' ? `Student - ${formData.year_exp}` : `${formData.status} - ${formData.year_exp}`,
+                experience: formData.status, // Keeping simple status here
+                current_year: formData.year_exp, // Explicitly saving year
                 college: formData.college_org,
                 created_at: new Date().toISOString()
             }]);
 
             if (insertError) throw insertError;
 
-            navigate('/confirmation', { state: { userData: { name: formData.name, email: formData.email } } });
+            // Trigger Confirmation Email & WhatsApp
+            await triggerRegistrationEmail({ name: formData.name, email: formData.email });
+            await triggerWhatsAppMessage({ name: formData.name, phone: formData.whatsapp });
+
+            navigate('/confirmation', { state: { userData: { name: formData.name, email: formData.email, whatsapp: formData.whatsapp } } });
         } catch (err) {
             setError(err.message || 'Registration failed. Please try again.');
         } finally {
@@ -164,8 +170,8 @@ const RegistrationPage = () => {
                                         <option value="Working Professional">Working Professional</option>
                                     </select>
                                     <label className={`absolute left-5 transition-all duration-200 pointer-events-none ${focusedField === 'status' || formData.status
-                                            ? 'top-2 text-xs text-brand-400'
-                                            : 'top-1/2 -translate-y-1/2 text-gray-500'
+                                        ? 'top-2 text-xs text-brand-400'
+                                        : 'top-1/2 -translate-y-1/2 text-gray-500'
                                         }`}>
                                         Current Status
                                     </label>
@@ -264,8 +270,8 @@ const FloatingInput = ({ label, name, type = "text", value, onChange, focused, o
         />
         <label
             className={`absolute left-5 transition-all duration-200 pointer-events-none ${focused || value
-                    ? 'top-2 text-xs text-brand-400'
-                    : 'top-1/2 -translate-y-1/2 text-gray-500'
+                ? 'top-2 text-xs text-brand-400'
+                : 'top-1/2 -translate-y-1/2 text-gray-500'
                 }`}
         >
             {label}

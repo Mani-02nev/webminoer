@@ -18,6 +18,7 @@ const Navbar = () => {
         { name: 'Home', path: '/' },
         { name: 'Programs', path: '/programs' },
         { name: 'Certificate', path: '/certificate-preview' },
+        { name: 'Verify', path: '/verify' },
     ];
 
     return (

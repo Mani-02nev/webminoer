@@ -61,7 +61,7 @@ const LandingPage = () => {
             <div id="details" className="relative z-20 py-10 border-y border-white/5 bg-white/[0.02] backdrop-blur-sm">
                 <div className="layout-container grid grid-cols-2 md:grid-cols-4 gap-8">
                     {[
-                        { label: 'Date', value: 'Feb 15, 2026' },
+                        { label: 'Date', value: 'Feb 16, 2026' },
                         { label: 'Time', value: '7:00 PM IST' },
                         { label: 'Platform', value: 'Google Meet' },
                         { label: 'Cost', value: 'Free for Students' }
@@ -135,6 +135,20 @@ const LandingPage = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* VERIFY CERTIFICATE CTA */}
+            <section className="relative z-10 py-20 border-t border-white/5 bg-white/5 backdrop-blur-md">
+                <div className="layout-container flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div>
+                        <h3 className="heading-lg text-3xl mb-2">Already Certified?</h3>
+                        <p className="text-gray-400">Validate your credentials or check a candidate's certificate authenticity instantly.</p>
+                    </div>
+                    <Link to="/verify" className="btn-outline px-8 py-4 flex items-center gap-2 group bg-dark-bg/50">
+                        <CheckCircle2 size={20} className="text-green-400" />
+                        Verify A Certificate <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                    </Link>
                 </div>
             </section>
 

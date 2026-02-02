@@ -9,6 +9,7 @@ export default {
             fontFamily: {
                 heading: ['"Outfit"', 'sans-serif'],
                 body: ['Inter', 'sans-serif'],
+                serif: ['"Playfair Display"', 'serif'],
             },
             colors: {
                 brand: {
