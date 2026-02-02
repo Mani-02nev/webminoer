@@ -53,7 +53,7 @@ const ConfirmationPage = () => {
                                 <div className="flex items-center gap-3 text-gray-400 mb-2">
                                     <Calendar size={18} /> <span className="text-sm uppercase font-bold">Date</span>
                                 </div>
-                                <p className="text-lg font-bold text-white">Feb 15, 2026</p>
+                                <p className="text-lg font-bold text-white">Feb 16, 2026</p>
                             </div>
                             <div>
                                 <div className="flex items-center gap-3 text-gray-400 mb-2">
@@ -84,13 +84,13 @@ const ConfirmationPage = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <a
-                            href={whatsappGroupLink}
+                            href={`https://wa.me/${userData.whatsapp?.replace(/\D/g, '') || ''}?text=${encodeURIComponent(`Hi ${userData.name}, looking forward to the React Webinar!`)}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn-primary flex items-center gap-2 bg-[#25D366] hover:bg-[#128C7E] shadow-[0_0_20px_rgba(37,211,102,0.3)] border-transparent"
                         >
                             <MessageCircle size={20} />
-                            Join WhatsApp Group
+                            Send Myself a Reminder
                         </a>
                         <Link to="/" className="btn-outline flex items-center gap-2">
                             Return to Home <ArrowRight size={20} />
