@@ -68,7 +68,7 @@ const LandingPage = () => {
                             label: 'Cost',
                             value: (
                                 <div className="flex items-center gap-3">
-                                    <s className="text-gray-500 line-through decoration-white/30 text-base font-medium">₹909</s>
+                                    <s className="text-gray-500 line-through decoration-white/30 text-base font-medium">₹99</s>
                                     <span className="text-brand-400 animate-pulse">FREE</span>
                                 </div>
                             )
@@ -88,7 +88,7 @@ const LandingPage = () => {
             <section className="relative z-10 py-32">
                 <div className="layout-container">
                     <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-                        <h2 className="heading-lg">Why Top Developers Choose NeoTech</h2>
+                        <h2 className="heading-lg">Why Top Developers Choose Times Tech</h2>
                         <p className="text-gray-400 text-lg">Detailed, production-focused training that goes beyond the basics.</p>
                     </div>
 
