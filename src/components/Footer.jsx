@@ -15,7 +15,7 @@ const Footer = () => {
                                 <Zap size={18} fill="currentColor" />
                             </div>
                             <span className="text-xl font-heading font-bold text-white tracking-wide uppercase group-hover:text-brand-500 transition-colors">
-                                Times Tech Pvt Ltd
+                                Time's Tech Learning Platform
                             </span>
                         </a>
                         <p className="text-gray-400 text-sm leading-relaxed">
@@ -58,7 +58,7 @@ const Footer = () => {
                 </div>
 
                 <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p className="text-gray-500 text-sm">© 2026 Times Tech Pvt Ltd. All rights reserved.</p>
+                    <p className="text-gray-500 text-sm">© 2026 Time's Tech Learning Platform. All rights reserved.</p>
                     <p className="text-gray-500 text-sm flex items-center gap-1">
                         Made with <Heart size={14} className="text-red-500 fill-red-500" /> by Times Tech Team
                     </p>

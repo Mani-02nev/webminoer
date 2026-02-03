@@ -78,7 +78,7 @@ const RegistrationPage = () => {
             if (insertError) throw insertError;
 
             // Trigger Confirmation Email & WhatsApp
-            await triggerRegistrationEmail({ name: formData.name, email: formData.email });
+            await triggerRegistrationEmail({ name: formData.name, email: formData.email.toLowerCase() });
             await triggerWhatsAppMessage({ name: formData.name, phone: formData.whatsapp });
 
             navigate('/confirmation', { state: { userData: { name: formData.name, email: formData.email, whatsapp: formData.whatsapp } } });

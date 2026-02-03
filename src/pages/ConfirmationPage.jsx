@@ -84,13 +84,13 @@ const ConfirmationPage = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <a
-                            href={`https://wa.me/${userData.whatsapp?.replace(/\D/g, '') || ''}?text=${encodeURIComponent(`Hi ${userData.name}, looking forward to the React Webinar!`)}`}
+                            href={whatsappGroupLink}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn-primary flex items-center gap-2 bg-[#25D366] hover:bg-[#128C7E] shadow-[0_0_20px_rgba(37,211,102,0.3)] border-transparent"
                         >
                             <MessageCircle size={20} />
-                            Send Myself a Reminder
+                            Join WhatsApp Group
                         </a>
                         <Link to="/" className="btn-outline flex items-center gap-2">
                             Return to Home <ArrowRight size={20} />
