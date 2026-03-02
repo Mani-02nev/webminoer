@@ -466,7 +466,7 @@ const AdminGeneratorPage = () => {
                                         disabled={sendingBulk || attendanceList.length === 0}
                                         className="btn-primary px-4 py-2 flex items-center gap-2 text-sm"
                                     >
-                                        <Send size={16} /> Send Coefficients to ALL
+                                        <Send size={16} /> Send Certificates to ALL
                                     </button>
                                     <button onClick={fetchAttendance} className="p-2 bg-white/5 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-colors"><RefreshCcw size={18} /></button>
                                 </div>

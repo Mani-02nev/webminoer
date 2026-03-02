@@ -9,6 +9,7 @@ const RegistrationPage = () => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
+    const [activeWebinar, setActiveWebinar] = useState(null);
 
     // Form State
     const [formData, setFormData] = useState({
@@ -22,6 +23,29 @@ const RegistrationPage = () => {
     });
 
     const [focusedField, setFocusedField] = useState(null);
+
+    // Fetch active webinar
+    useEffect(() => {
+        fetchActiveWebinar();
+    }, []);
+
+    const fetchActiveWebinar = async () => {
+        try {
+            const { data, error } = await supabase
+                .from('webinars')
+                .select('*')
+                .eq('registration_open', true)
+                .order('program_date', { ascending: true })
+                .limit(1)
+                .single();
+
+            if (!error && data) {
+                setActiveWebinar(data);
+            }
+        } catch (err) {
+            console.error('Error fetching webinar:', err);
+        }
+    };
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -72,6 +96,7 @@ const RegistrationPage = () => {
                 experience: formData.status, // Keeping simple status here
                 current_year: formData.year_exp, // Explicitly saving year
                 college: formData.college_org,
+                webinar_id: activeWebinar?.id || null,
                 created_at: new Date().toISOString()
             }]);
 
@@ -89,6 +114,9 @@ const RegistrationPage = () => {
         }
     };
 
+    const webinarType = activeWebinar?.webinar_type === 'masterclass' ? 'Master Class' : 'Webinar';
+    const isRegistrationOpen = activeWebinar?.registration_open;
+
     return (
         <div className="min-h-screen pt-32 pb-20 bg-dark-bg flex items-center justify-center relative overflow-hidden">
             {/* Background decoration */}
@@ -104,8 +132,17 @@ const RegistrationPage = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <div className="text-center mb-10 space-y-4">
-                        <h1 className="heading-lg">Secure Your Seat</h1>
-                        <p className="text-gray-400">Join 5,000+ developers mastering React.</p>
+                        <h1 className="heading-lg">
+                            {activeWebinar ? `Register for ${webinarType}` : 'Registration'}
+                        </h1>
+                        <p className="text-gray-400">
+                            {activeWebinar ? `Join ${activeWebinar.program_name}` : 'Join 5,000+ developers mastering React.'}
+                        </p>
+                        {!isRegistrationOpen && (
+                            <div className="inline-block px-4 py-2 bg-red-500/10 border border-red-500/20 rounded-full text-red-300 text-sm">
+                                Registration is currently closed
+                            </div>
+                        )}
                     </div>
 
                     <div className="card-glass p-8 md:p-10 shadow-2xl relative overflow-hidden">
