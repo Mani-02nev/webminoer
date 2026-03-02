@@ -11,7 +11,9 @@ import ConfirmationPage from './pages/ConfirmationPage';
 import ProgramsPage from './pages/ProgramsPage';
 import VerifyCertificatePage from './pages/VerifyCertificatePage';
 import AdminGeneratorPage from './pages/AdminGeneratorPage';
+import AdminPanelPage from './pages/AdminPanelPage';
 import AttendancePage from './pages/AttendancePage';
+import CommunityPage from './pages/CommunityPage';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -40,9 +42,11 @@ const App = () => {
             <Route path="/certificate/:id" element={<CertificatePreviewPage />} />
             <Route path="/verify" element={<VerifyCertificatePage />} />
             <Route path="/verify/:id" element={<VerifyCertificatePage />} />
-            <Route path="/admin" element={<AdminGeneratorPage />} />
+            {/* <Route path="/admin" element={<AdminGeneratorPage />} /> */}
+            <Route path="/admin" element={<AdminPanelPage />} />
             <Route path="/confirmation" element={<ConfirmationPage />} />
             <Route path="/attendance" element={<AttendancePage />} />
+            <Route path="/community" element={<CommunityPage />} />
           </Routes>
         </AnimatePresence>
       </main>
