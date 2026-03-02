@@ -1,4 +1,4 @@
-# 🚀 Deployment Guide - Times Tech Webinar Platform
+# 🚀 Deployment Guide - Tech Stack Webinar Platform
 
 ## Prerequisites Checklist
 

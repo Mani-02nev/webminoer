@@ -98,7 +98,7 @@ const LandingPage = () => {
                                 </div>
 
                                 <h1 className="heading-xl">
-                                    Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-500">Times Tech</span> Community
+                                    Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-500">Tech Stack</span> Community
                                 </h1>
 
                                 <p className="text-body-lg text-gray-400 max-w-xl">
@@ -171,7 +171,7 @@ const LandingPage = () => {
             <section className="relative z-10 py-32">
                 <div className="layout-container">
                     <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-                        <h2 className="heading-lg">Why Top Developers Choose Times Tech</h2>
+                        <h2 className="heading-lg">Why Top Developers Choose Tech Stack</h2>
                         <p className="text-gray-400 text-lg">Detailed, production-focused training that goes beyond the basics.</p>
                     </div>
 
@@ -243,7 +243,7 @@ const LandingPage = () => {
                             </div>
 
                             <h2 className="heading-lg">
-                                Join the <span className="text-brand-500">Times Tech</span> Community
+                                Join the <span className="text-brand-500">Tech Stack</span> Community
                             </h2>
 
                             <p className="text-xl text-gray-400">

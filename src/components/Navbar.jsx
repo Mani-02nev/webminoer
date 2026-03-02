@@ -32,7 +32,7 @@ const Navbar = () => {
             <div className="layout-container flex items-center justify-between">
                 {/* Brand Text Only - No Logo */}
                 <Link to="/" className="text-lg md:text-xl font-heading font-medium tracking-widest uppercase text-white hover:opacity-80 transition-opacity">
-                    <span className="text-[#EC4899] font-bold">T</span>imes <span className="text-[#EC4899] font-bold">T</span>ech <span className="text-[#EC4899] font-bold">L</span>earning <span className="text-[#EC4899] font-bold">P</span>latform
+                    <span className="text-[#EC4899] font-bold">T</span>ech <span className="text-[#EC4899] font-bold">S</span>tack <span className="text-[#EC4899] font-bold">L</span>earning <span className="text-[#EC4899] font-bold">P</span>latform
                 </Link>
 
                 {/* Desktop Nav */}

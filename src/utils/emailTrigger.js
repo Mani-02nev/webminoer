@@ -19,7 +19,7 @@ export const triggerRegistrationEmail = async (recipient) => {
     console.log("📨 Payload being sent:", {
         to_email: recipient.email,
         name: recipient.name,
-        from_name: "Times Tech Support"
+        from_name: "Tech Stack Support"
     });
 
     try {
@@ -40,7 +40,7 @@ export const triggerRegistrationEmail = async (recipient) => {
                 reply_to: recipient.email,
 
                 // OPTIONAL: Matches {{from_name}} if you use it in "From Name" field
-                from_name: "Times Tech Support",
+                from_name: "Tech Stack Support",
 
                 // OPTIONAL: Matches {{webinar_time}} if used
                 webinar_time: "7:00 PM IST",
@@ -81,7 +81,7 @@ export const triggerCertificateEmail = async (recipient, certificateId) => {
                 reply_to: recipient.email,
 
                 // OPTIONAL: Matches {{from_name}} in "From Name"
-                from_name: "Times Tech Support",
+                from_name: "Tech Stack Support",
 
                 // Certificate Specifics
 

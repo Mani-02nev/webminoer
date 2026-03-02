@@ -9,7 +9,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                     {/* Brand Column */}
                     <div className="col-span-1 md:col-span-1 space-y-6">
-                        <a href="https://times-tech.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group">
+                        <a href="https://tt0211.vercel.app/#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group">
                             {/* Placeholder for Logo Asset - using generic for now */}
                             <div className="w-8 h-8 bg-brand-600/20 text-brand-500 rounded-lg flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition-colors">
                                 <Zap size={18} fill="currentColor" />
@@ -58,9 +58,9 @@ const Footer = () => {
                 </div>
 
                 <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p className="text-gray-500 text-sm">© 2026 Time's Tech Learning Platform. All rights reserved.</p>
+                    <p className="text-gray-500 text-sm">© 2026 TECH STACK Learning Platform. All rights reserved.</p>
                     <p className="text-gray-500 text-sm flex items-center gap-1">
-                        Made with <Heart size={14} className="text-red-500 fill-red-500" /> by Times Tech Team
+                        Made with <Heart size={14} className="text-red-500 fill-red-500" /> by Tech Stack Team
                     </p>
                 </div>
             </div>

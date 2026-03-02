@@ -238,7 +238,7 @@ TT-REACT-YYYY-XXXX
 Example: TT-REACT-2026-1234
 ```
 
-- `TT` = Times Tech
+- `TT` = Tech Stack
 - `REACT` = Webinar topic
 - `YYYY` = Year
 - `XXXX` = Random 4-digit number

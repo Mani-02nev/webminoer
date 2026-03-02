@@ -68,7 +68,7 @@ webinar-react/
 │
 ├── src/
 │   ├── assets/
-│   │   ├── logo.png            # Times Tech logo
+│   │   ├── logo.png            # Tech Stack logo
 │   │   ├── logoBase64.js       # Base64 encoded logo
 │   │   └── react.jpg           # React image asset
 │   │
@@ -914,8 +914,8 @@ Shows success/failure message
 
 ## 📞 Support & Contact
 
-**Developer:** Times Tech Team  
-**Email:** support@timestech.com  
+**Developer:** Tech Stack Team  
+**Email:** support@techstack.com  
 **Website:** [Your Website URL]
 
 ---
@@ -923,7 +923,7 @@ Shows success/failure message
 ## 📝 License
 
 This project is proprietary and confidential.  
-© 2026 Times Tech. All rights reserved.
+© 2026 Tech Stack. All rights reserved.
 
 ---
 

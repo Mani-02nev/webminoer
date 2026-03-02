@@ -1,4 +1,4 @@
-# 🎯 Project Summary - Times Tech Webinar Platform
+# 🎯 Project Summary - Tech Stack Webinar Platform
 
 ## ✅ Project Completion Status: PRODUCTION READY
 
@@ -6,7 +6,7 @@
 
 ## 📋 Project Overview
 
-A **production-ready webinar registration platform** built for **Times Tech Learning Platform** featuring:
+A **production-ready webinar registration platform** built for **TECH STACK Learning Platform** featuring:
 
 - **Webinar:** React Mastery Webinar – Build 20+ Real World Applications
 - **Mentor:** Mani (Self-taught React Developer, Student)
@@ -460,6 +460,6 @@ For deployment assistance, refer to:
 
 ---
 
-**Built with ❤️ for Times Tech Learning Platform**
+**Built with ❤️ for TECH STACK Learning Platform**
 
 *A production-ready webinar registration platform following MNC-level standards.*

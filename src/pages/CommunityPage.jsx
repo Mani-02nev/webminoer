@@ -83,7 +83,7 @@ const CommunityPage = () => {
                         <Users size={48} className="text-brand-500" />
                     </div>
                     <h1 className="heading-lg mb-4">
-                        Join the <span className="text-brand-500">Times Tech</span> Community
+                        Join the <span className="text-brand-500">Tech Stack</span> Community
                     </h1>
                     <p className="text-xl text-gray-400 max-w-2xl mx-auto">
                         Become a member of our vibrant learning community. Connect with fellow learners,

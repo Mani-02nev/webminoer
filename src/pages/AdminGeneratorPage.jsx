@@ -160,7 +160,7 @@ const AdminGeneratorPage = () => {
         doc.setFont('helvetica', 'normal');
         doc.setTextColor(100, 100, 100);
         doc.text('Computer Engineering Student', 40, footerY + 5);
-        doc.text('Times Tech Pvt Ltd', 40, footerY + 10);
+        doc.text('Tech Stack Pvt Ltd', 40, footerY + 10);
 
         // Right Date/ID
         doc.setFont('helvetica', 'bold');

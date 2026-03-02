@@ -60,7 +60,7 @@ This document summarizes all the new features added to the webinar management sy
 ### 3. **Community Page** ✅
 
 #### Features:
-- **Join Times Tech Community**: Beautiful landing page
+- **Join Tech Stack Community**: Beautiful landing page
 - **Dynamic Form**: Adapts based on employment status
 - **Two User Types**:
   

@@ -60,7 +60,7 @@ export const ParticipationTemplate = ({ name, title, date, certificateId }) => {
                         <div className="w-48 h-0.5 bg-gray-600 mb-2"></div>
                         <p className="text-sm font-bold text-white">KARUPPASAMY M</p>
                         <p className="text-xs text-gray-400">Computer Engineering Student</p>
-                        <p className="text-xs text-gray-400">Times Tech Pvt Ltd</p>
+                        <p className="text-xs text-gray-400">Tech Stack Pvt Ltd</p>
                     </div>
 
                     <div className="text-center">

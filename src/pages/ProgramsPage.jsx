@@ -5,29 +5,29 @@ import { Link } from 'react-router-dom';
 const ProgramsPage = () => {
     const programs = [
         {
-            title: "Roadmap to React Webinar",
-            date: "Feb 15, 2026",
+            title: "AI + Web Development - Live AI Chatbot Build Webinar",
+            date: "Mar 22, 2026",
             status: "Current",
             type: "Webinar",
-            desc: "The ultimate guide to mastering React in 2026. Covers hooks, patterns, and performance.",
+            desc: "Learn to build a live AI chatbot from scratch and mastering Web Development alongside.",
             icon: Code,
             link: "/register",
             active: true
         },
         {
-            title: "React Masterclass",
-            date: "March 15, 2026",
-            status: "Upcoming",
-            type: "Masterclass",
-            desc: "Deep dive into advanced React. Suspense, RSC, and Enterprise Architecture.",
+            title: "Roadmap to React Webinar",
+            date: "Feb 15, 2026",
+            status: "Completed",
+            type: "Webinar",
+            desc: "The ultimate guide to mastering React in 2026. Covers hooks, patterns, and performance.",
             icon: Zap,
             link: "#",
             active: false
         },
         {
             title: "Frontend Career Guidance",
-            date: "Feb 28, 2026",
-            status: "Upcoming",
+            date: "Jan 28, 2026",
+            status: "Completed",
             type: "Mentorship",
             desc: "How to crack top product-based companies as a Frontend Engineer.",
             icon: Users,
@@ -36,8 +36,8 @@ const ProgramsPage = () => {
         },
         {
             title: "No-Code IT Placement",
-            date: "Coming Soon",
-            status: "Waitlist",
+            date: "Dec 10, 2025",
+            status: "Completed",
             type: "Webinar",
             desc: "Break into IT without writing complex code. Low-code/No-code revolution.",
             icon: Video,
@@ -68,8 +68,8 @@ const ProgramsPage = () => {
                             {/* Status Badge */}
                             <div className="absolute top-6 right-6">
                                 <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${program.status === 'Current' ? 'bg-brand-500/20 text-brand-400 border border-brand-500/30' :
-                                        program.status === 'Upcoming' ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' :
-                                            'bg-gray-500/20 text-gray-400 border border-gray-500/30'
+                                    program.status === 'Upcoming' ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' :
+                                        'bg-gray-500/20 text-gray-400 border border-gray-500/30'
                                     }`}>
                                     {program.status}
                                 </span>
@@ -97,7 +97,7 @@ const ProgramsPage = () => {
                                 </Link>
                             ) : (
                                 <button disabled className="btn-outline w-full opacity-50 cursor-not-allowed">
-                                    Notify Me
+                                    {program.status}
                                 </button>
                             )}
                         </motion.div>

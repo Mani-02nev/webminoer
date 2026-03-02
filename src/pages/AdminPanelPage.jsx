@@ -27,6 +27,7 @@ const AdminPanelPage = () => {
         program_name: '',
         program_date: '',
         description: '',
+        webinar_type: 'webinar',
         registration_open: true,
         max_participants: 100
     });
@@ -154,6 +155,7 @@ const AdminPanelPage = () => {
                 program_name: '',
                 program_date: '',
                 description: '',
+                webinar_type: 'webinar',
                 registration_open: true,
                 max_participants: 100
             });
@@ -568,6 +570,18 @@ const AdminPanelPage = () => {
                                                             value={webinarForm.description}
                                                             onChange={(e) => setWebinarForm({ ...webinarForm, description: e.target.value })}
                                                         />
+                                                    </div>
+
+                                                    <div>
+                                                        <label className="text-sm text-gray-400 mb-1 block">Webinar Type</label>
+                                                        <select
+                                                            className="input-field"
+                                                            value={webinarForm.webinar_type || 'webinar'}
+                                                            onChange={(e) => setWebinarForm({ ...webinarForm, webinar_type: e.target.value })}
+                                                        >
+                                                            <option value="webinar">Webinar</option>
+                                                            <option value="masterclass">Master Class</option>
+                                                        </select>
                                                     </div>
 
                                                     <div>
@@ -1085,8 +1099,8 @@ const AdminPanelPage = () => {
                                                                     <tr className="border-b border-white/10 text-gray-400 text-sm">
                                                                         <th className="py-3 px-4">Name</th>
                                                                         <th className="py-3 px-4">Email</th>
-                                                                        <th className="py-3 px-4">College</th>
-                                                                        <th className="py-3 px-4">Year</th>
+                                                                        <th className="py-3 px-4">College/Org</th>
+                                                                        <th className="py-3 px-4">Year/Exp</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody className="divide-y divide-white/5">

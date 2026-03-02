@@ -212,7 +212,7 @@ const VerifyCertificatePage = () => {
                                 <div className="pt-6 border-t border-white/10">
                                     <p className="text-xs text-gray-500 uppercase font-bold mb-2">Conducted By</p>
                                     <p className="text-white text-sm leading-relaxed text-gray-300">
-                                        {certificate.conducted_by || "KARUPPASAMY M – Computer Engineering Student | Times Tech Pvt Ltd"}
+                                        {certificate.conducted_by || "KARUPPASAMY M – Computer Engineering Student | Tech Stack Pvt Ltd"}
                                     </p>
                                 </div>
                             </div>

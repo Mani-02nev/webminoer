@@ -9,7 +9,7 @@ Go to **Email Templates** -> **Settings** (for your Registration Template).
 | Field | Value to Enter (Copy & Paste) | Notes |
 | :--- | :--- | :--- |
 | **To Email** | `{{to_email}}` | **CRITICAL**: Do not put your email here. |
-| **From Name** | `Times Tech Support` | Or use `{{from_name}}` if you prefer dynamic. |
+| **From Name** | `Tech Stack Support` | Or use `{{from_name}}` if you prefer dynamic. |
 | **From Email** | (Check the box) ☑ Use Default Email Address | Ensures delivery. |
 | **Reply To** | `{{reply_to}}` | Allows you to reply to the user. |
 | **BCC** | (Optional) Your email | If you want a hidden copy. |

@@ -135,8 +135,12 @@ const RegistrationPage = () => {
                         <h1 className="heading-lg">
                             {activeWebinar ? `Register for ${webinarType}` : 'Registration'}
                         </h1>
-                        <p className="text-gray-400">
-                            {activeWebinar ? `Join ${activeWebinar.program_name}` : 'Join 5,000+ developers mastering React.'}
+                        <p className="text-lg text-gray-300">
+                            {activeWebinar ? (
+                                <>Join <span className="font-bold text-white">{activeWebinar.program_name}</span></>
+                            ) : (
+                                'Join 5,000+ developers mastering React.'
+                            )}
                         </p>
                         {!isRegistrationOpen && (
                             <div className="inline-block px-4 py-2 bg-red-500/10 border border-red-500/20 rounded-full text-red-300 text-sm">
