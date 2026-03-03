@@ -29,6 +29,7 @@ const AdminPanelPage = () => {
         description: '',
         webinar_type: 'webinar',
         registration_open: true,
+        attendance_open: false,
         max_participants: 100
     });
 
@@ -157,6 +158,7 @@ const AdminPanelPage = () => {
                 description: '',
                 webinar_type: 'webinar',
                 registration_open: true,
+                attendance_open: false,
                 max_participants: 100
             });
             fetchWebinars();
@@ -190,6 +192,19 @@ const AdminPanelPage = () => {
             fetchStats();
         } catch (error) {
             console.error('Error toggling registration:', error);
+        }
+    };
+
+    const toggleAttendance = async (webinar) => {
+        try {
+            const { error } = await supabase
+                .from('webinars')
+                .update({ attendance_open: !webinar.attendance_open })
+                .eq('id', webinar.id);
+            if (error) throw error;
+            fetchWebinars();
+        } catch (error) {
+            console.error('Error toggling attendance:', error);
         }
     };
 
@@ -305,6 +320,9 @@ const AdminPanelPage = () => {
     };
 
     const handleSendCertificate = async (attendee) => {
+        if (!window.confirm(`Are you sure you want to send a certificate to ${attendee.name}?`)) {
+            return;
+        }
         try {
             const certId = `CERT-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
 
@@ -608,6 +626,19 @@ const AdminPanelPage = () => {
                                                         </label>
                                                     </div>
 
+                                                    <div className="flex items-center gap-2">
+                                                        <input
+                                                            type="checkbox"
+                                                            id="attendance_open"
+                                                            checked={webinarForm.attendance_open || false}
+                                                            onChange={(e) => setWebinarForm({ ...webinarForm, attendance_open: e.target.checked })}
+                                                            className="w-4 h-4 rounded border-gray-500 text-blue-500"
+                                                        />
+                                                        <label htmlFor="attendance_open" className="text-sm text-gray-300">
+                                                            Attendance Open
+                                                        </label>
+                                                    </div>
+
                                                     <div className="flex gap-3 pt-4">
                                                         <button type="submit" className="btn-primary flex-1">
                                                             <Save size={18} />
@@ -656,7 +687,15 @@ const AdminPanelPage = () => {
                                                                     : 'bg-red-500/20 text-red-400'
                                                                     }`}
                                                             >
-                                                                {webinar.registration_open ? 'Open' : 'Closed'}
+                                                                Reg: {webinar.registration_open ? 'Open' : 'Closed'}
+                                                            </span>
+                                                            <span
+                                                                className={`px-3 py-1 rounded-full text-xs font-bold ${webinar.attendance_open
+                                                                    ? 'bg-blue-500/20 text-blue-400'
+                                                                    : 'bg-gray-500/20 text-gray-500'
+                                                                    }`}
+                                                            >
+                                                                Attend: {webinar.attendance_open ? 'Open' : 'Closed'}
                                                             </span>
                                                         </div>
                                                         <p className="text-gray-400 text-sm mb-2">{webinar.description}</p>
@@ -681,6 +720,28 @@ const AdminPanelPage = () => {
                                                             title={webinar.registration_open ? 'Close Registration' : 'Open Registration'}
                                                         >
                                                             {webinar.registration_open ? <Lock size={18} /> : <Unlock size={18} />}
+                                                        </button>
+                                                        <button
+                                                            onClick={() => toggleAttendance(webinar)}
+                                                            className={`p-2 rounded-lg transition-colors ${webinar.attendance_open
+                                                                ? 'bg-blue-500/10 text-blue-400 hover:bg-blue-500/20'
+                                                                : 'bg-gray-500/10 text-gray-400 hover:bg-gray-500/20'
+                                                                }`}
+                                                            title={webinar.attendance_open ? 'Close Attendance' : 'Open Attendance'}
+                                                        >
+                                                            <CheckCircle size={18} />
+                                                        </button>
+                                                        <button
+                                                            onClick={() => {
+                                                                setActiveSection('records');
+                                                                setSelectedWebinar(webinar);
+                                                                setActiveTab('active');
+                                                                fetchRecords(webinar.id);
+                                                            }}
+                                                            className="p-2 bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 rounded-lg transition-colors"
+                                                            title="View Attendance Records"
+                                                        >
+                                                            <Users size={18} />
                                                         </button>
                                                         <button
                                                             onClick={() => {
