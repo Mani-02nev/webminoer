@@ -79,14 +79,21 @@ const RegistrationPage = () => {
         setLoading(true);
 
         try {
-            // Check existing
-            const { data: existing } = await supabase
+            // Check existing for this webinar
+            let query = supabase
                 .from('participants')
                 .select('email')
-                .eq('email', formData.email.toLowerCase())
-                .single();
+                .eq('email', formData.email.toLowerCase());
 
-            if (existing) throw new Error('This email is already registered.');
+            if (activeWebinar?.id) {
+                query = query.eq('webinar_id', activeWebinar.id);
+            } else {
+                query = query.is('webinar_id', null);
+            }
+
+            const { data: existing } = await query.maybeSingle();
+
+            if (existing) throw new Error('This email is already registered for this webinar.');
 
             // Insert
             const { error: insertError } = await supabase.from('participants').insert([{
